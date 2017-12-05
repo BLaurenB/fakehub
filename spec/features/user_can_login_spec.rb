@@ -7,8 +7,8 @@ feature "Unauthenticated user can login with Github" do
     visit '/'
     click_on "Login with Github!"
     expect(current_path).to eq('/dashboard')
-    # binding.pry
     expect(page).to have_content("BLaurenB")
+    expect(page).to_not have_content("Login with Github!")
 
   end
 

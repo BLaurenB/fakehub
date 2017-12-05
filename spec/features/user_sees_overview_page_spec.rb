@@ -6,7 +6,10 @@ feature "When user visits FakeHub root" do
     user = create(:user, token: ENV["GITHUB_USER_TOKEN"])
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-    visit '/'
+    visit '/dashboard'
+
+
+
 
     #change this to check for a specific location within the page
 

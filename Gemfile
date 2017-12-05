@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'figaro'
 gem 'omniauth-github'
+gem 'omniauth', '1.6.1'
 gem 'faraday'
 
 

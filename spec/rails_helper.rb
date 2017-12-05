@@ -6,12 +6,12 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 
-require ‘rspec/rails'
-require ‘spec_helper'
+require 'rspec/rails'
+require 'spec_helper'
 require 'capybara/rails'
-require ‘database_cleaner’
+require 'database_cleaner'
 
-#################…and…################
+
 
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -62,7 +62,7 @@ RSpec.configure do |config|
 
   # Filter lines from Rails gems in backtraces.
   config.filter_rails_from_backtrace!
-  
+
   # Configure Factory Bot, factory_bot_rails
   config.include FactoryBot::Syntax::Methods
 
@@ -74,4 +74,20 @@ RSpec.configure do |config|
   end
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+end
+
+def stub_omniauth
+  OmniAuth.config.test_mode = true
+  OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
+    "provider"=>"github",
+    "uid"=>"20262199",
+    "info"=> {
+      "nickname"=>"BLaurenB",
+      "email"=>"blbillington1@gmail.com"
+     },
+    "credentials"=> {
+      "token"=> ENV["GITHUB_USER_TOKEN"],
+      "expires"=>false
+      }
+    })
 end

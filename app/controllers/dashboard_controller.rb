@@ -8,10 +8,10 @@ class DashboardController < ApplicationController
       req.headers['token'] = ENV["GITHUB_USER_TOKEN"]
     end
 
-    user_data = JSON.parse(response.body)
+    user_data = JSON.parse(response.body, symbolize_names: true)
 
     @hub_user = HubUser.new(user_data)
-    binding.pry
+    # binding.pry
 
   end
 

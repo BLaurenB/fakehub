@@ -11,7 +11,7 @@ class HubUser
               :followers,
               :following
 
-  def initialize(data = {})
+  def initialize(data={})
     @id = data[:id]
     @name = data[:name]
     @image = data[:avatar_url]

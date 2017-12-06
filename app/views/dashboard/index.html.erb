@@ -1,7 +1,9 @@
 
-<h2> <%= current_user.username %> </h2>
+<h2> <%= @hub_user.name %> </h2>
 <h2> <%= @hub_user.id %> </h2>
-<h2> <%= @hub_user.bio %> </h2>
+<h2> <%= image_tag @hub_user.image, size: "200x200" %> </h2>
+
+<h2> <%= @hub_user.bio  if @hub_user.bio !=nil %> </h2>
 <h2> <%= @hub_user.location %> </h2>
 <h2> <%= @hub_user.public_repos %> </h2>
 <h2> <%= @hub_user.following %> </h2>

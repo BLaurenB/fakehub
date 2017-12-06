@@ -9,7 +9,21 @@
   </head>
 
   <body>
-    <%= yield %>
     <%= render 'layouts/navbar' %>
+    <div class="sidebar col col-4">
+      sidebar has: image, name, handle, bio, follow-btn
+
+
+
+    </div>
+    <div class="user-info col col-8">
+      <div class="user-tabs">
+      </div>
+      <div class="user-pages">
+        <%= yield %>
+      </div>
+    </div>
+
+    <%= render 'layouts/footer' %>
   </body>
 </html>

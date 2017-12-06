@@ -1,9 +1,7 @@
 
-<h2> <%= @hub_user.name %> </h2>
-<h2> <%= @hub_user.id %> </h2>
-<h2> <%= image_tag @hub_user.image, size: "200x200" %> </h2>
 
-<h2> <%= @hub_user.bio  if @hub_user.bio !=nil %> </h2>
-<h2> <%= @hub_user.location %> </h2>
-<h2> <%= @hub_user.public_repos %> </h2>
-<h2> <%= @hub_user.following %> </h2>
+<h3> Repositories:<%= @hub_user.public_repos %> </h3>
+<h3> Following:<%= @hub_user.following %> </h3>
+<h3> Followers:<%= @hub_user.followers %> </h3>
+
+<p>if 'pinned' !nil, render pined repo cards. else render popular repo cards.</p>

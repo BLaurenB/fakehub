@@ -1,7 +1,37 @@
+<div class="container">
+  <div class="clearfix">
+    <div class="col col-4">
+      <p>NOTES: sidebar has: image, name, handle, bio, follow-btn, etc.</p>
+      <h2> <%= hub_user.name %> </h2>
+      <h2> <%= image_tag hub_user.image, size: "200x200" %> </h2>
+      <h2> <%= hub_user.bio  if hub_user.bio !=nil %> </h2>
+      <h2> <%= hub_user.location if hub_user.location !=nil%> </h2>
+    </div>
+    <div class="col-right col-8">
+      <div class="user-tabs">
+        <p>Here's where all the tabs will be...they should be buttons so I can capture params</p>
+        <h3> (TAB)Repositories:<%= @hub_user.public_repos %> </h3>
+        <h3> (TAB)Following:<%= @hub_user.following %> </h3>
+        <h3> (TAB)Followers:<%= @hub_user.followers %> </h3>
+      </div>
+      <div class="user-pages">
+        <div class="repos">
+          render 'dashboard/repositories' using erb tags
+          <p>if 'pinned' !nil, render pined repo cards. else render popular repo cards.</p>
+        </div>
 
+        <div class="starred_repos">
+          render partial starred_repos
+        </div>
 
-<h3> Repositories:<%= @hub_user.public_repos %> </h3>
-<h3> Following:<%= @hub_user.following %> </h3>
-<h3> Followers:<%= @hub_user.followers %> </h3>
+        <div class="repos">
+          render partial repos
+        </div>
 
-<p>if 'pinned' !nil, render pined repo cards. else render popular repo cards.</p>
+        <div class="repos">
+          render partial repos
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

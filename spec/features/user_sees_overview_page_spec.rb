@@ -17,7 +17,7 @@ feature "When user visits FakeHub root" do
     hub_user = HubUser.new(user_data)
 
     visit '/dashboard'
-
+    # save_and_open_page
     expect(page).to have_content(hub_user.name)
     expect(page).to have_content(hub_user.image)
     expect(page).to have_content(hub_user.public_repos)

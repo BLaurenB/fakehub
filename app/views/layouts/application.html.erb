@@ -10,29 +10,12 @@
 
   <body>
     <div class="container">
-      <div class="fixed z2 top-0 left-0 right-0 p2 white bg-black">
+      <div class="z2 top-0 left-0 right-0 p2 white bg-black">
         <%= render 'layouts/navbar' %>
       </div>
-    </div>
-    <div class="container">
-      <div class="clearfix">
-        <div class="col col-4">
-          <p>NOTES: sidebar has: image, name, handle, bio, follow-btn, etc.</p>
-          <h2> <%= hub_user.name %> </h2>
-          <h2> <%= image_tag hub_user.image, size: "200x200" %> </h2>
-          <h2> <%= hub_user.bio  if hub_user.bio !=nil %> </h2>
-          <h2> <%= hub_user.location %> </h2>
-        </div>
-        <div class="col-right col-8">
-          <div class="user-tabs">
-            <p>Here's where all the tabs will be</p>
-          </div>
-          <div class="user-pages">
-            
-            <%= yield %>
-          </div>
-        </div>
-      </div>
+
+        <%= yield %>
+
     </div>
   <div class="container">
     <div class="clearfix">

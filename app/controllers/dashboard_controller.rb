@@ -1,7 +1,7 @@
 class DashboardController < ApplicationController
 
   def index
-    connection = Faraday.new(url: "https://api.github.com/users/BLaurenB")
+    connection = Faraday.new(url: "https://api.github.com/users/#{current_user.username}")
     response = connection.get do |req|
       req.headers['token'] = current_user.token
     end

@@ -7,6 +7,7 @@ class DashboardController < ApplicationController
     end
     user_data = JSON.parse(response.body, symbolize_names: true)
     @hub_user = HubUser.new(user_data)
+    binding.pry
   end
 
 end

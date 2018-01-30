@@ -1,4 +1,4 @@
-class HubUser
+class ApiData
 
   attr_reader :id,
               :name,
@@ -23,5 +23,14 @@ class HubUser
     @followers = data[:followers]
     @following = data[:following]
   end
+
+
+  def self.return_repo_data(git_hub_user_from_uri = current_user.username)
+    GitHubService.new.make_api_call(git_hub_user_from_uri).map do |repo|
+      ApiData.new(repo)
+  end
+
+
+
 
 end

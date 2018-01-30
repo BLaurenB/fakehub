@@ -1,12 +1,12 @@
 class DashboardController < ApplicationController
 
+  git_hub_user_from_uri = current_user.username
+  # Need If/Else logi git_hub_user_from_uri = params[:user]
+
+
   def index
-    connection = Faraday.new(url: "https://api.github.com/users/#{current_user.username}")
-    response = connection.get do |req|
-      req.headers['token'] = current_user.token
-    end
-    user_data = JSON.parse(response.body, symbolize_names: true)
-    @hub_user = HubUser.new(user_data)
+    @displayed_user = ApiData.new(git_hub_user_from_uri) #right now, this just displays my user in my database, not a api collection.
   end
+
 
 end

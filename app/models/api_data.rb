@@ -24,14 +24,14 @@ class ApiData
     @following = data[:following]
   end
 
-  def self.return_repo_data(current_user, git_hub_user_from_uri)
-    ApiData.new(github(current_user).get_json(git_hub_user_from_uri))
+  def self.return_repo_data(token, git_hub_user_from_uri)
+    ApiData.new(github(token).get_json(git_hub_user_from_uri))
   end
 
 private
 
-  def self.github(current_user)
-    GitHubService.new(current_user.token)
+  def self.github(token)
+    GitHubService.new(token)
   end
 
 

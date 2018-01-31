@@ -24,13 +24,15 @@ class ApiData
     @following = data[:following]
   end
 
-
-  def self.return_repo_data(git_hub_user_from_uri = current_user.username)
-    GitHubService.new.make_api_call(git_hub_user_from_uri).map do |repo|
-      ApiData.new(repo)
+  def self.return_repo_data(current_user, git_hub_user_from_uri)
+    ApiData.new(github(current_user).get_json(git_hub_user_from_uri))
   end
 
+private
 
+  def self.github(current_user)
+    GitHubService.new(current_user.token)
+  end
 
 
 end

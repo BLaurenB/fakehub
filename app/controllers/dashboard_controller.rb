@@ -1,8 +1,5 @@
 class DashboardController < ApplicationController
 
-
-
-
   def index
 
     git_hub_user_from_uri = params[:username] || current_user.username

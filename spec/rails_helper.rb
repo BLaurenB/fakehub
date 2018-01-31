@@ -86,7 +86,7 @@ def stub_omniauth
       "email"=>"blbillington1@gmail.com"
      },
     "credentials"=> {
-      "token"=> ENV["GITapi_data_TOKEN"],
+      "token"=> ENV["GITHUB_USER_TOKEN"],
       "expires"=>false
       }
     })

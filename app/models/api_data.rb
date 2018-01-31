@@ -25,7 +25,7 @@ class ApiData
   end
 
   def self.return_repo_data(token, git_hub_user_from_uri)
-    ApiData.new(github(token).get_json(git_hub_user_from_uri))
+    ApiData.new(github(token).get_data(git_hub_user_from_uri))
   end
 
 private

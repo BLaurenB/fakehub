@@ -9,7 +9,7 @@ class GitHubService
   end
 
 
-  def get_json(git_hub_user_from_uri)
+  def get_data(git_hub_user_from_uri)
     #call get on the connection, adding headers and the remaining urI, and save it to "response"
     response = connection.get("users/#{git_hub_user_from_uri}")
     JSON.parse(response.body, symbolize_names: true)

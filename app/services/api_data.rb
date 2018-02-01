@@ -8,6 +8,7 @@ class ApiData
               :bio,
               :public_repos,
               :public_gists,
+              :stars,
               :followers,
               :following
 
@@ -20,6 +21,7 @@ class ApiData
     @bio = data[:bio]
     @public_repos = data[:public_repos]
     @public_gists = data[:public_gists]
+    @stars = data[:stars]
     @followers = data[:followers]
     @following = data[:following]
   end

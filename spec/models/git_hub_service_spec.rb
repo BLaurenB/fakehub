@@ -13,3 +13,9 @@
 #      end
 #   end
 # end
+
+
+
+# DON'T USE WEBMOCK OR VCR FOR THESE -- SHOULD BE A REAL API CALL!!! - check the docks!
+#
+# check for structure, check that it has keys, that the data is a certain datatype

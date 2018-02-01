@@ -13,13 +13,27 @@
 
   <div class="box content">
 
-      <div class="user-tabs">
-        <p>Here's where all the tabs will be...they should be buttons so I can capture params</p>
-        <h3> <%= link_to "(TAB)Repositories: #{@displayed_user.public_repos}" %> </h3>
-        <h3> (TAB)Following:<%= @displayed_user.following %> </h3>
-        <h3> (TAB)Followers:<%= @displayed_user.followers %> </h3>
-      </div><!-- <div class="user-tabs"> -->
-      <div class="user-pages">
+      <div class="box content-inner-wrapper">
+        <div class=" overview-tab">
+          <h4> Overview %> </h4>
+        </div><!-- <div class="overview-tab"> -->
+        <div class="repo-tab">
+          <h4> <%= link_to "(TAB)Repositories #{@displayed_user.public_repos}" %> </h4>
+        </div><!-- <div class="repo-tab"> -->
+        <div class="stars-tab">
+          <h4> Stars <%= @displayed_user.stars %> </h4>
+        </div><!-- <div class="stars-tab"> -->
+        <div class="followers-tab">
+          <h4> Followers <%= @displayed_user.followers %> </h4>
+        </div><!-- <div class="followers-tab"> -->
+        <div class="following-tab">
+          <h4> Following <%= @displayed_user.following %> </h4>
+        </div><!-- <div class="following-tab"> -->
+      </div><!-- <div class="content-inner-wrapper"> -->
+
+
+      <div class=" box user-pages">
+        
         <div class="repos">
           render 'dashboard/repositories' using erb tags
           <p>if 'pinned' !nil, render pined repo cards. else render popular repo cards.</p>
@@ -28,22 +42,19 @@
             repo.name
           end
           </div><!-- <div class="list_repos"> -->
-
         </div><!-- <div class="repos"> -->
 
-        <div class="starred-repos">
+        <div class=" box starred-repos">
           render partial _starred_repos
         </div><!-- <div class="starred-repos"> -->
 
-        <div class="following">
+        <div class="box following">
           render partial _following
         </div><!-- <div class=""> -->
 
-        <div class="followed">
+        <div class="box followed">
           render partial _followed
         </div>
-      </div>
-    </div>
-  </div>
-</div>
+      </div> <!-- <div class=" box user-pages"> -->
+
 </div><!-- <div class="box content> -->

@@ -10,43 +10,21 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require basscss/basscss
- *= require basscss/basscss-addons
  *= require_tree .
  *= require_self
  */
 
  body {
-  margin: 40px;
-  font: Helvetica;
+  margin: 10px;
+  font-family: 'Helvetica';
 }
 
 
-.header {
-  grid-column: col / span 7;
-  grid-row: row: 0;
-}
 
-.sidebar {
-  grid-column: col 2 / span 1;
-  grid-row: row: 1;
-}
-
-.content {
-  grid-column: col 3 / span 4;
-  grid-row: row: 1;
-}
-
-.footer {
-  grid-column: col 2 / span 5;
-  grid-row: row: 2;
-}
-
-
-.wrapper {
+.site-wrapper {
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: repeat(7, [col] 20%);
+    grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(3, [row] auto);
     background-color: #white;
     color: #black;
@@ -57,13 +35,86 @@
   background-color: #white;
   color: #black;
   border-radius: 5px;
+  border-style: solid;
+  border-width: 2px;
   padding: 10px;
   font-size: 100%;
 }
 
-.header{
+.header {
+  grid-column-start: 1;
+  grid-column-end: 8;
+  grid-row: 1;
   background-color: #444;
 }
+
+    .nav-wrapper {
+      display: grid;
+      grid-gap: 10px;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: 1;
+    }
+
+    .display-name {
+      grid-column-start: 4;
+      grid-column-end: 5;
+    }
+    .login-logout {
+      grid-column-start: 5;
+      grid-column-end: 6
+    }
+
+
+
+.sidebar {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row: 2;
+}
+
+.content {
+  grid-column-start: 3;
+  grid-column-end: 7;
+  grid-row: 2;
+}
+
+  .content-inner-wrapper {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 2;
+  }
+
+  .overview-tab {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row: 1;
+  }
+  .repo-tab {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row: 1;
+  }
+  .stars-tab {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row: 1;
+  }
+  .followers-tab {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row: 1;
+  }
+  .following-tab {
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row: 1;
+  }
+
+
 .footer {
+  grid-column-start: 1;
+  grid-column-end: 8;
+  grid-row: 3;
   background-color: #white;
 }

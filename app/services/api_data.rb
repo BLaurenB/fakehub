@@ -4,6 +4,7 @@ class ApiData
               :name,
               :image,
               :company,
+              :email,
               :location,
               :bio,
               :public_repos,
@@ -18,6 +19,7 @@ class ApiData
     @image = data[:avatar_url]
     @company = data[:company]
     @location = data[:location]
+    @email = data[:email]
     @bio = data[:bio]
     @public_repos = data[:public_repos]
     @public_gists = data[:public_gists]

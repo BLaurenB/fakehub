@@ -19,7 +19,9 @@
   font-family: 'Helvetica';
 }
 
-
+.center{
+  text-align: center;
+}
 
 .site-wrapper {
     display: grid;
@@ -36,9 +38,9 @@
   color: #black;
   border-radius: 5px;
   border-style: solid;
-  border-width: 2px;
-  padding: 10px;
-  font-size: 100%;
+  border-width: 1px;
+  padding: 1px;
+  font-size: 95%;
 }
 
 .header {

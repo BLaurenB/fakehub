@@ -6,7 +6,6 @@
       <p><%= @displayed_user.bio  if @displayed_user.bio !=nil %> </p>
       <h3><%= @displayed_user.location if @displayed_user.location !=nil%> </h3>
       <h3><%= @displayed_user.email if @displayed_user.email !=nil%> </h3>
-
 </div><!-- <div class="box sidebar"> -->
 
 
@@ -33,9 +32,11 @@
 
       <div class=" box user-pages">
 
+        <div class="">
+        </div><!-- <div class=""> -->
+
+
         <div class="repos">
-          render 'dashboard/repositories' using erb tags
-          <p>if 'pinned' !nil, render pined repo cards. else render popular repo cards.</p>
           <div class"list_repos">
           @displayed_user.repos.each do |repo|
             repo.name
@@ -45,6 +46,7 @@
 
         <div class=" box starred-repos">
           render partial _starred_repos
+          <%= render 'dashboard/overview' %>
         </div><!-- <div class="starred-repos"> -->
 
         <div class="box following">

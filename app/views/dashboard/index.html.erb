@@ -1,37 +1,49 @@
-<div class="container">
-  <div class="clearfix">
-    <div class="col col-4">
+
+
+<div class="box sidebar">
+
       <p>NOTES: sidebar has: image, name, handle, bio, follow-btn, etc.</p>
-      <h2> <%= @displayed_user.name %> </h2>
       <h2> <%= image_tag @displayed_user.image, size: "200x200" %> </h2>
-      <h2> <%= @displayed_user.bio  if @displayed_user.bio !=nil %> </h2>
-      <h2> <%= @displayed_user.location if @displayed_user.location !=nil%> </h2>
-    </div>
-    <div class="col-right col-8">
+      <h2> <%= @displayed_user.name %> </h2>
+      <p> <%= @displayed_user.bio  if @displayed_user.bio !=nil %> </p>
+      <h3> <%= @displayed_user.location if @displayed_user.location !=nil%> </h3>
+
+</div><!-- <div class="box sidebar"> -->
+
+
+  <div class="box content">
+
       <div class="user-tabs">
         <p>Here's where all the tabs will be...they should be buttons so I can capture params</p>
-        <h3> (TAB)Repositories:<%= @displayed_user.public_repos %> </h3>
+        <h3> <%= link_to "(TAB)Repositories: #{@displayed_user.public_repos}" %> </h3>
         <h3> (TAB)Following:<%= @displayed_user.following %> </h3>
         <h3> (TAB)Followers:<%= @displayed_user.followers %> </h3>
-      </div>
+      </div><!-- <div class="user-tabs"> -->
       <div class="user-pages">
         <div class="repos">
           render 'dashboard/repositories' using erb tags
           <p>if 'pinned' !nil, render pined repo cards. else render popular repo cards.</p>
-        </div>
+          <div class"list_repos">
+          @displayed_user.repos.each do |repo|
+            repo.name
+          end
+          </div><!-- <div class="list_repos"> -->
 
-        <div class="starred_repos">
-          render partial starred_repos
-        </div>
+        </div><!-- <div class="repos"> -->
 
-        <div class="repos">
-          render partial repos
-        </div>
+        <div class="starred-repos">
+          render partial _starred_repos
+        </div><!-- <div class="starred-repos"> -->
 
-        <div class="repos">
-          render partial repos
+        <div class="following">
+          render partial _following
+        </div><!-- <div class=""> -->
+
+        <div class="followed">
+          render partial _followed
         </div>
       </div>
     </div>
   </div>
 </div>
+</div><!-- <div class="box content> -->

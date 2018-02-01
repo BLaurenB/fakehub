@@ -2,7 +2,7 @@ class GitHubService
 
   def initialize(token)
   #establish the connection using new and the urL
-    @connection = Faraday.new(url: "https://api.github.com/")  do |f|
+    @connection = Faraday.new(url: "https://api.github.com/users/")  do |f|
       f.headers['Authorization'] = "token #{token}"
       f.adapter Faraday.default_adapter
     end
@@ -11,7 +11,7 @@ class GitHubService
 
   def get_data(git_hub_user_from_uri)
     #call get on the connection, adding headers and the remaining urI, and save it to "response"
-    response = connection.get("users/#{git_hub_user_from_uri}")
+    response = connection.get("#{git_hub_user_from_uri}")
     JSON.parse(response.body, symbolize_names: true)
   end
 

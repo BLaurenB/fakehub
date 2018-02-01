@@ -12,6 +12,8 @@ class ApiData
               :stars,
               :followers,
               :following
+              # :repos,
+
 
   def initialize(data={})
     @id = data[:id]
@@ -26,6 +28,7 @@ class ApiData
     @stars = data[:stars]
     @followers = data[:followers]
     @following = data[:following]
+    # @repos = data[:repositories]
   end
 
   def self.return_repo_data(token, git_hub_user_from_uri)

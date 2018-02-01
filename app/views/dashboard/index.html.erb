@@ -30,32 +30,12 @@
       </div><!-- <div class="content-inner-wrapper"> -->
 
 
-      <div class=" box user-pages">
-
-        <div class="">
-        </div><!-- <div class=""> -->
-
-
-        <div class="repos">
-          <div class"list_repos">
-          @displayed_user.repos.each do |repo|
-            repo.name
-          end
-          </div><!-- <div class="list_repos"> -->
-        </div><!-- <div class="repos"> -->
-
-        <div class=" box starred-repos">
-          render partial _starred_repos
-          <%= render 'dashboard/overview' %>
-        </div><!-- <div class="starred-repos"> -->
-
-        <div class="box following">
-          render partial _following
-        </div><!-- <div class=""> -->
-
-        <div class="box followed">
-          render partial _followed
-        </div>
-      </div> <!-- <div class=" box user-pages"> -->
+      <div class="render-partials">
+        <%= render 'dashboard/overview' %>
+        <%= render 'dashboard/repositories' %>
+        <%= render 'dashboard/starred' %>
+        <%= render 'dashboard/followers' %>
+        <%= render 'dashboard/following' %>
+      </div> <!-- <div class="render-partials"> -->
 
 </div><!-- <div class="box content> -->

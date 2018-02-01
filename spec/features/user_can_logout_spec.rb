@@ -1,17 +1,19 @@
 require 'rails_helper'
 
 feature "Authenticated user can logout" do
-  
-  scenario "When logged in" do
+  before do
     stub_omniauth
+  end
 
-    visit '/'
-    click_on "Login with Github!"
-    expect(current_path).to eq("/#{User.last.username}")
+  scenario "When logged in" do
+    VCR.use_cassette("user_views_overview_page") do
+      visit '/'
+      click_on "Login with Github!"
+      expect(current_path).to eq("/#{User.last.username}")
 
-    click_on "Logout"
-    expect(current_path).to eq('/')     
-
+      click_on "Logout"
+      expect(current_path).to eq('/')
+    end 
   end
 
 

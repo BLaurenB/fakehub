@@ -5,7 +5,7 @@
       <h2><%= @displayed_user.name %> </h2>
       <p class="bottom-line"><%= @displayed_user.bio  if @displayed_user.bio !=nil %> </p>
       <h3><%= @displayed_user.location if @displayed_user.location !=nil%> </h3>
-      <h3 class = text-color-blue><%= @displayed_user.email if @displayed_user.email !=nil%> </h3>
+      <h3 class="text-color-blue"><%= @displayed_user.email if @displayed_user.email !=nil%> </h3>
 </div><!-- <div class="box sidebar"> -->
 
   <div class="box content">
@@ -18,7 +18,7 @@
           <h4> <%= link_to "Repositories #{@displayed_user.public_repos}", "#{@root}#{@displayed_user.name}/?tab=repositories" %> </h4>
         </div><!-- <div class="repo-tab"> -->
         <div class="stars-tab center bottom-line">
-          <h4> <%= link_to "Stars #{@displayed_user.stars}", "#{@root}#{@displayed_user.name}/?tab=stars" %> </h4>
+          <h4> <%= link_to "Stars #{@displayed_user.starred.count}", "#{@root}#{@displayed_user.name}/?tab=stars" %> </h4>
         </div><!-- <div class="stars-tab"> -->
         <div class="followers-tab center bottom-line">
           <h4> <%= link_to "Followers #{@displayed_user.followers}", "#{@root}#{@displayed_user.name}/?tab=followers" %> </h4>

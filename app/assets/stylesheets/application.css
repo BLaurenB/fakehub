@@ -17,6 +17,7 @@
  body {
   margin: 10px;
   font-family: 'Helvetica';
+  text-decoration: none;
 }
 
 .text-color-blue{
@@ -85,6 +86,11 @@
       grid-gap: 10px;
       grid-template-columns: repeat(5, 1fr);
       grid-template-rows: 1;
+    }
+
+    .git-links {
+      grid-column-start: 2;
+      grid-column-end: 4;
     }
 
     .display-name {

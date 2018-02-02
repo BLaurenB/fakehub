@@ -19,8 +19,37 @@
   font-family: 'Helvetica';
 }
 
+.text-color-blue{
+  color: #0078be
+}
+
+.text-color-ltgrey{
+  color: #d6d0d0;
+}
+
+.bold{
+  font-weight: bold;
+}
+
 .center{
   text-align: center;
+}
+
+.right{
+  text-align: right;
+}
+
+.bottom-line{
+  border-bottom: solid;
+  border-color: #b2acac;
+  border-width: 2px;
+}
+
+.border{
+  border-style: solid;
+  border-color: #b2acac;
+  border-width: 1px;
+
 }
 
 .site-wrapper {
@@ -28,8 +57,8 @@
     grid-gap: 10px;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(3, [row] auto);
-    background-color: #white;
-    color: #black;
+    background-color: white;
+    color: black;
 }
 
 
@@ -37,8 +66,8 @@
   background-color: #white;
   color: #black;
   border-radius: 5px;
-  border-style: solid;
-  border-width: 1px;
+  /* border-style: solid;
+  border-width: 1px; */
   padding: 1px;
   font-size: 95%;
 }
@@ -47,7 +76,8 @@
   grid-column-start: 1;
   grid-column-end: 8;
   grid-row: 1;
-  background-color: #444;
+  color: #ffffff;
+  background-color: #000000;
 }
 
     .nav-wrapper {

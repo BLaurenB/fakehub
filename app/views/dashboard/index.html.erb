@@ -3,28 +3,28 @@
 <div class="box sidebar">
       <h2><%= image_tag @displayed_user.image, size: "200x200" %> </h2>
       <h2><%= @displayed_user.name %> </h2>
-      <p><%= @displayed_user.bio  if @displayed_user.bio !=nil %> </p>
+      <p class="bottom-line"><%= @displayed_user.bio  if @displayed_user.bio !=nil %> </p>
       <h3><%= @displayed_user.location if @displayed_user.location !=nil%> </h3>
-      <h3><%= @displayed_user.email if @displayed_user.email !=nil%> </h3>
+      <h3 class = text-color-blue><%= @displayed_user.email if @displayed_user.email !=nil%> </h3>
 </div><!-- <div class="box sidebar"> -->
 
 
   <div class="box content">
 
       <div class="box content-inner-wrapper">
-        <div class=" overview-tab center">
+        <div class=" overview-tab center bottom-line">
           <h4> Overview %> </h4>
         </div><!-- <div class="overview-tab"> -->
-        <div class="repo-tab center">
+        <div class="repo-tab center bottom-line">
           <h4> <%= link_to "Repositories #{@displayed_user.public_repos}" %> </h4>
         </div><!-- <div class="repo-tab"> -->
-        <div class="stars-tab center">
+        <div class="stars-tab center bottom-line">
           <h4> Stars <%= @displayed_user.stars %> </h4>
         </div><!-- <div class="stars-tab"> -->
-        <div class="followers-tab center">
+        <div class="followers-tab center bottom-line">
           <h4> Followers <%= @displayed_user.followers %> </h4>
         </div><!-- <div class="followers-tab"> -->
-        <div class="following-tab center">
+        <div class="following-tab center bottom-line">
           <h4> Following <%= @displayed_user.following %> </h4>
         </div><!-- <div class="following-tab"> -->
       </div><!-- <div class="content-inner-wrapper"> -->

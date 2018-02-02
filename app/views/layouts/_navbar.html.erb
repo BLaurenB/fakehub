@@ -1,12 +1,12 @@
-<div class=" box nav-wrapper">
+<div class=" box nav-wrapper text-color-ltgrey bold">
     <% if current_user  %>
     <div class="box display-name">
-      <p> Logged in as <%= current_user.username %></p>
+      <p class="text-color-blue"> Logged in as <%= current_user.username %></p>
     </div><!-- <div class="display-name"> -->
       <div class="box login-logout">
       <p><%= link_to "Logout", logout_path %></p>
     <% else %>
-      <p><%= link_to "Login with Github!", github_login_path %></p>
+      <p class="text-color-blue"><%= link_to "Login with Github!", github_login_path %></p>
     <% end %>
   </div><!-- <div class="login-logout"> -->
 </div><!-- <div class="nav-wrapper"> -->

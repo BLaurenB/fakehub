@@ -11,11 +11,11 @@ class ApiData
               :public_gists,
               :stars,
               :followers,
-              :following
-              # :repos,
+              :following,
+              :repos
 
 
-  def initialize(data={})
+  def initialize(data={}, repos={})
     @id = data[:id]
     @name = data[:name]
     @image = data[:avatar_url]
@@ -28,12 +28,21 @@ class ApiData
     @stars = data[:stars]
     @followers = data[:followers]
     @following = data[:following]
-    # @repos = data[:repositories]
+    @repos = repos.map {|repo| Repos.new(repo)}
   end
 
-  def self.return_repo_data(token, git_hub_user_from_uri)
-    ApiData.new(github(token).get_data(git_hub_user_from_uri))
+  def self.return_repo_data(token, handle)
+    ApiData.new(overview_data(token, handle), repo_data(token, handle))
   end
+
+  def self.overview_data(token, handle)
+    github(token).get_data(handle)
+  end
+
+  def self.repo_data(token, handle)
+    github(token).get_repos(handle)
+  end
+
 
 private
 

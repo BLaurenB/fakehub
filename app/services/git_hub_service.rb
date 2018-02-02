@@ -9,14 +9,18 @@ class GitHubService
   end
 
 
-  def get_data(git_hub_user_from_uri)
+  def get_data(handle)
     #call get on the connection, adding headers and the remaining urI, and save it to "response"
-    response = connection.get("#{git_hub_user_from_uri}")
+    response = connection.get("#{handle}")
     JSON.parse(response.body, symbolize_names: true)
   end
 
-  private
-    attr_reader :connection
+  def get_repos(handle)
+    response = connection.get("#{handle}/repos")
+    JSON.parse(response.body, symbolize_names: true)
+  end
 
+    private
+      attr_reader :connection
 
 end

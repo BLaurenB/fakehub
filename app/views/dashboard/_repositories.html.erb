@@ -1,0 +1,13 @@
+<div class="box repos">
+  <div class"list_repos">
+  <% @displayed_user.repos.each do |repo|  %>
+
+  <div class="box border">
+    <h3 class="text-color-blue"><%=repo.name  %></br></h3>
+    <%=repo.description  %></br>
+    <%=repo.language  %>
+  </div><!-- <div class="box"> -->
+
+  <%end %>
+  </div><!-- <div class="list_repos"> -->
+</div><!-- <div class="box repos"> -->

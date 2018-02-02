@@ -41,9 +41,9 @@ describe ApiData do
           VCR.use_cassette("user_views_overview_page") do
           user = User.create(uid: "1234567", username: "Joe", token: "token1234")
           token = user.token
-          git_hub_user_from_uri = "BLaurenB"
+          handle = "BLaurenB"
 
-           api_data = ApiData.return_repo_data(token, git_hub_user_from_uri)
+           api_data = ApiData.return_repo_data(token, handle)
 
            expect(api_data.name).to eq("BLaurenB")
            expect(api_data.company).to eq(nil)

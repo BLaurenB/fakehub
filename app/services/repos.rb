@@ -1,6 +1,14 @@
 class Repos
 
-  attr_reader :id, :name, :description, :stargazers_count, :watchers_count, :language, :has_issues, :forks_count, :archived
+  attr_reader :id,
+              :name, 
+              :description,
+              :stargazers_count,
+              :watchers_count,
+              :language,
+              :has_issues,
+              :forks_count,
+              :archived
 
   def initialize(repo_hash)
     @id = repo_hash[:id]

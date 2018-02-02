@@ -20,6 +20,21 @@ class GitHubService
     JSON.parse(response.body, symbolize_names: true)
   end
 
+  def get_starred(handle)
+    response = connection.get("#{handle}/starred")
+    JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def get_followers(handle)
+    response = connection.get("#{handle}/followers")
+    JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def get_followed(handle)
+    response = connection.get("#{handle}/followed")
+    JSON.parse(response.body, symbolize_names: true)
+  end
+
     private
       attr_reader :connection
 

@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
   get '/', to: "home#index"
   get '/:username', to: 'dashboard#index'
+  get '/:username/?tab=repositories', to: 'dashboard#index'
+
 
 end

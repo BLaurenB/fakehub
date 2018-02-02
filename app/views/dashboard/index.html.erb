@@ -8,34 +8,32 @@
       <h3 class = text-color-blue><%= @displayed_user.email if @displayed_user.email !=nil%> </h3>
 </div><!-- <div class="box sidebar"> -->
 
-
   <div class="box content">
 
       <div class="box content-inner-wrapper">
         <div class=" overview-tab center bottom-line">
-          <h4> Overview %> </h4>
+          <h4>Overview</h4>
         </div><!-- <div class="overview-tab"> -->
         <div class="repo-tab center bottom-line">
-          <h4> <%= link_to "Repositories #{@displayed_user.public_repos}" %> </h4>
+          <h4> <%= link_to "Repositories #{@displayed_user.public_repos}", "#{@root}#{@displayed_user.name}/?tab=repositories" %> </h4>
         </div><!-- <div class="repo-tab"> -->
         <div class="stars-tab center bottom-line">
-          <h4> Stars <%= @displayed_user.stars %> </h4>
+          <h4> <%= link_to "Stars #{@displayed_user.stars}", "#{@root}#{@displayed_user.name}/?tab=stars" %> </h4>
         </div><!-- <div class="stars-tab"> -->
         <div class="followers-tab center bottom-line">
-          <h4> Followers <%= @displayed_user.followers %> </h4>
+          <h4> <%= link_to "Followers #{@displayed_user.followers}", "#{@root}#{@displayed_user.name}/?tab=followers" %> </h4>
         </div><!-- <div class="followers-tab"> -->
         <div class="following-tab center bottom-line">
-          <h4> Following <%= @displayed_user.following %> </h4>
+          <h4> <%= link_to "Following #{@displayed_user.following}", "#{@root}#{@displayed_user.name}/?tab=following" %> </h4>
         </div><!-- <div class="following-tab"> -->
       </div><!-- <div class="content-inner-wrapper"> -->
 
-
       <div class="render-partials">
-        <%= render 'dashboard/overview' %>
-        <%= render 'dashboard/repositories' %>
-        <%= render 'dashboard/starred' %>
-        <%= render 'dashboard/followers' %>
-        <%= render 'dashboard/following' %>
+        <%= render 'dashboard/overview' if @params[:username]%>
+        <%= render 'dashboard/repositories' if @params[:tab] == "repositories"%>
+        <%= render 'dashboard/starred' if @params[:tab] == "stars"%>
+        <%= render 'dashboard/followers' if @params[:tab] == "followers"%>
+        <%= render 'dashboard/following' if @params[:tab] == "following"%>
       </div> <!-- <div class="render-partials"> -->
 
 </div><!-- <div class="box content> -->

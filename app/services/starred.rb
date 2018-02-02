@@ -117,5 +117,5 @@ end
         "open_issues": 8,
         "watchers": 1904,
         "default_branch": "master"
-    },
-    =end
+    }
+=end

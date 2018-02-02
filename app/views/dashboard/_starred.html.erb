@@ -1,9 +1,15 @@
 <div class=" box starred-repos">
 
-full_name (linked to real gh?)
-descr
+    <div class"list_starred">
+    <% @displayed_user.starred.each do |star|  %>
 
-language, stargazers, network
+    <div class="box bottom-line">
+      <h3 class="text-color-blue"><%=star.full_name  %></br></h3>
+      <%=star.description  %></br>
+      <%="language "star.language "   starred "star.stargazers  "   network "star.network  %>
+    </div><!-- <div class="box bottom-line"> -->
 
+    <%end %>
+  </div><!-- <div class="list_starred"> -->
 
 </div><!-- <div class="box starred-repos"> -->

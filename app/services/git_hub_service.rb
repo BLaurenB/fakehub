@@ -30,8 +30,8 @@ class GitHubService
     JSON.parse(response.body, symbolize_names: true)
   end
 
-  def get_followed(handle)
-    response = connection.get("#{handle}/followed")
+  def get_following(handle)
+    response = connection.get("#{handle}/following")
     JSON.parse(response.body, symbolize_names: true)
   end
 
